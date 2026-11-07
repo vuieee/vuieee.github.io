@@ -42,15 +42,22 @@
         </div>
 
         <div class="converter-controls">
-          <label for="outputFormat">Convert to</label>
-          <select id="outputFormat" name="outputFormat" disabled></select>
+          <span id="selectedFileCount" class="file-count" aria-live="polite">No file added</span>
+          <div class="format-control">
+            <label for="outputFormat">Convert to</label>
+            <select id="outputFormat" name="outputFormat" disabled>
+              <option value="" selected disabled>Choose a file first</option>
+            </select>
+          </div>
           <div id="qualityControl" class="quality-control hidden">
             <label for="quality">Quality <span id="qualityValue">85%</span></label>
             <input id="quality" type="range" min="10" max="100" value="85">
           </div>
         </div>
 
-        <button id="convertButton" class="primary-button" type="submit" disabled>Convert file</button>
+        <div class="convert-actions">
+          <button id="convertButton" class="primary-button" type="submit" disabled>Convert <span aria-hidden="true">&rarr;</span></button>
+        </div>
         <p id="statusMessage" class="status-message" role="status" aria-live="polite"></p>
 
         <div id="outputDetails" class="output-details hidden">

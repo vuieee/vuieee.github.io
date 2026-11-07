@@ -9,6 +9,7 @@
   const qualityControl = document.getElementById("qualityControl");
   const quality = document.getElementById("quality");
   const qualityValue = document.getElementById("qualityValue");
+  const selectedFileCount = document.getElementById("selectedFileCount");
   const convertButton = document.getElementById("convertButton");
   const statusMessage = document.getElementById("statusMessage");
   const outputDetails = document.getElementById("outputDetails");
@@ -92,9 +93,15 @@
     selectedKind = null;
     fileInput.value = "";
     fileDetails.classList.add("hidden");
-    outputFormat.replaceChildren();
+    const placeholder = document.createElement("option");
+    placeholder.value = "";
+    placeholder.textContent = "Choose a file first";
+    placeholder.disabled = true;
+    placeholder.selected = true;
+    outputFormat.replaceChildren(placeholder);
     outputFormat.disabled = true;
     convertButton.disabled = true;
+    selectedFileCount.textContent = "No file added";
     qualityControl.classList.add("hidden");
     clearOutput();
     setStatus("");
@@ -117,6 +124,7 @@
     fileMeta.textContent = `${kind === "image" ? "Image" : "Document"} · ${formatSize(file.size)}`;
     fileDetails.classList.remove("hidden");
     convertButton.disabled = false;
+    selectedFileCount.textContent = "Added 1 file";
     clearOutput();
     setStatus("");
     optionsFor(kind, extension);
