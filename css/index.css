@@ -107,6 +107,9 @@ table.dir{width:100%;border-collapse:collapse;font-size:1rem}
 .project-item h2 a:hover{color:var(--blue-dim)}
 .project-description{background:none;border-left:2px solid var(--fg4);border-radius:0;font-size:1rem;font-style:normal;margin:0 0 0 .5rem;padding:0 0 0 .75rem;color:var(--fg2)}
 .project-description p{margin:0}
+.project-note{border-left:2px solid var(--fg4);color:var(--fg3);font-size:.9rem;margin:.5rem 0 1.2rem;padding:.15rem 0 .15rem 1rem}
+.project-note strong{color:var(--fg2)}
+.project-note a{color:var(--blue)}
 .listing article.content p{text-align:justify;hyphens:auto}
 .content .code-block{position:relative;margin-bottom:1.2rem}
 .content .code-block>pre{margin-bottom:0}
